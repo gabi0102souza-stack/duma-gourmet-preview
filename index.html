@@ -290,6 +290,25 @@ html:not(.motion) .reel-row{overflow-x:auto}
 .elaine .chip{background:rgba(255,252,247,.08);border-color:rgba(255,233,214,.25);color:var(--butter)}
 .elaine .chip i{background:var(--peach)}
 .elaine-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.formacao{padding-bottom:clamp(72px,10vw,136px)}
+.form-head{border-top:1px solid rgba(255,233,214,.18);padding-top:clamp(48px,6vw,80px);margin-bottom:clamp(28px,4vw,48px)}
+.form-head h2{font-size:clamp(34px,4.6vw,64px);margin-top:16px;max-width:18ch}
+.form-head .hl{color:var(--peach);font-family:var(--hand);font-weight:700}
+.form-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.cred{border-radius:24px;padding:28px;background:rgba(255,252,247,.06);border:1px solid rgba(255,233,214,.16);display:flex;flex-direction:column;gap:12px;transition:background .3s,transform .3s}
+.js .cred.rv{transition-delay:var(--d)}
+.cred:hover{background:rgba(255,252,247,.1)}
+.cred-ic{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:var(--peach);color:var(--choco)}
+.cred-ic svg{width:30px;height:30px}
+.cred h3{font-size:24px;color:var(--butter)}
+.cred p{color:#E9D3BF;font-size:15px}
+.mentors{margin-top:16px;border-radius:24px;padding:28px;background:var(--peach);color:var(--choco);display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,2fr);gap:16px 32px;align-items:center}
+.mentors-label{font:400 clamp(22px,2vw,28px)/1.15 var(--hand)}
+.mentor-list{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
+.mentor-list li{display:inline-flex;align-items:center;gap:10px;padding:8px 16px 8px 8px;border-radius:999px;background:var(--butter);font:600 17px/1 var(--display);box-shadow:0 8px 18px -12px rgba(58,34,12,.5)}
+.mono{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--choco);color:var(--peach);font:700 12px/1 var(--body);letter-spacing:.04em}
+.mentors-note{grid-column:2;font-size:14px;color:var(--cocoa);margin-top:-4px}
+@media (max-width:900px){.form-grid{grid-template-columns:minmax(0,1fr)}.mentors{grid-template-columns:minmax(0,1fr)}.mentors-note{grid-column:auto}}
 .drip{display:block;width:100%;height:clamp(36px,5vw,64px);color:var(--choco)}
 
 /* como pedir */
@@ -464,6 +483,7 @@ html:not(.motion) .stage-meta,html:not(.motion) .pipe,html:not(.motion) .dots,ht
       <a href="#cardapio">Cardápio</a>
       <a href="#portfolio">Portfólio</a>
       <a href="#elaine">A Elaine</a>
+      <a href="#formacao">Formação</a>
       <a href="#como-pedir">Como pedir</a>
       <a class="btn magnetic" data-ifood href="#">Pedir no iFood</a>
     </nav>
@@ -765,11 +785,47 @@ html:not(.motion) .stage-meta,html:not(.motion) .pipe,html:not(.motion) .dots,ht
       <div>
         <p class="eyebrow">Quem faz</p>
         <h2 id="elaine-title" class="words">Prazer, eu sou a <span class="hl">Elaine.</span></h2>
-        <blockquote class="rv">Levando sabores incríveis até você.</blockquote>
-        <p class="txt rv">A Duma é a minha cozinha. Já fiz muito bolo decorado, e eles estão aí no portfólio pra contar a história.</p>
-        <p class="txt rv">Hoje o meu foco são as tortas geladas e os geladinhos: eu escolho um dia só pra produzir, faço tudo com calma, congelo no ponto certo e entrego do jeitinho que eu gosto.</p>
+        <blockquote class="rv">A Duma nasceu pra eu colocar em prática tudo o que estudei, do jeito que eu mais gosto: com carinho.</blockquote>
+        <p class="txt rv">Sou nutricionista de formação e co-criadora da Duma Cozinha Gourmet. Levei a confeitaria tão a sério quanto a faculdade: fui estudar massas, recheios e mousses, além de higiene e manipulação de alimentos.</p>
+        <p class="txt rv">Cada receita é pensada pra chegar o mais perto possível do seu paladar. Porque um doce bem feito é uma experiência única, e eu quero que ela seja inesquecível.</p>
+        <p class="txt rv">Hoje meu foco são as tortas geladas e os geladinhos: escolho um dia só pra produzir, faço tudo com calma e congelo no ponto certo.</p>
         <p class="sign rv">com carinho, Elaine</p>
-        <div class="elaine-chips rv"><span class="chip"><i></i>Tortas geladas</span><span class="chip"><i></i>Geladinho gourmet</span></div>
+        <div class="elaine-chips rv"><span class="chip"><i></i>Nutricionista</span><span class="chip"><i></i>Confeitaria técnica</span><span class="chip"><i></i>Co-criadora da Duma</span></div>
+      </div>
+    </div>
+
+    <!-- FORMAÇÃO -->
+    <div class="container formacao" id="formacao" aria-labelledby="formacao-title">
+      <div class="form-head">
+        <p class="eyebrow">Formação</p>
+        <h2 id="formacao-title" class="words">Técnica de quem estudou, <span class="hl">mão de quem ama.</span></h2>
+      </div>
+      <div class="form-grid">
+        <article class="cred rv" style="--d:0s">
+          <span class="cred-ic" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M20 6 4 14l16 8 16-8Z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><path d="M10 18v8c0 3 5 6 10 6s10-3 10-6v-8M36 14v10" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span>
+          <h3>Nutrição</h3>
+          <p>Formação que ensina a pensar no ingrediente, no equilíbrio e na segurança de cada receita.</p>
+        </article>
+        <article class="cred rv" style="--d:.1s">
+          <span class="cred-ic" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M8 30c2-8 7-12 12-12s10 4 12 12Z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><path d="M6 30h28M20 18v-4M16 10c0-3 8-3 8 0" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span>
+          <h3>Confeitaria técnica</h3>
+          <p>Cursos específicos de massas, recheios e mousses: cada camada com a técnica certa.</p>
+        </article>
+        <article class="cred rv" style="--d:.2s">
+          <span class="cred-ic" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M20 5 8 10v9c0 8 5 13 12 16 7-3 12-8 12-16v-9Z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><path d="m14 20 4 4 8-8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <h3>Higiene e manipulação</h3>
+          <p>Boas práticas da bancada ao congelador, pra você comer com tranquilidade.</p>
+        </article>
+      </div>
+      <div class="mentors rv">
+        <p class="mentors-label">Aprendeu com nomes de referência da confeitaria</p>
+        <ul class="mentor-list">
+          <li><span class="mono" aria-hidden="true">BR</span>Bruna Rebelo</li>
+          <li><span class="mono" aria-hidden="true">CM</span>Carolina Mello</li>
+          <li><span class="mono" aria-hidden="true">LG</span>Larissa Guimarães</li>
+          <li><span class="mono" aria-hidden="true">S</span>Sebrae</li>
+        </ul>
+        <p class="mentors-note">e outras escolas de confeitaria</p>
       </div>
     </div>
   </section>
